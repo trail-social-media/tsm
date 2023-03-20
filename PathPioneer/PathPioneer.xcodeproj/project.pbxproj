@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2F5DF2F429C91681003E0267 /* MainScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F5DF2F329C91681003E0267 /* MainScreen.storyboard */; };
 		2F5DF2F629C9171F003E0267 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F5DF2F529C9171F003E0267 /* Settings.storyboard */; };
 		2F5DF2F829C91756003E0267 /* MainScreenVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F5DF2F729C91756003E0267 /* MainScreenVC.storyboard */; };
 		A9CB62A829B6AA72000683B4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CB62A729B6AA72000683B4 /* AppDelegate.swift */; };
@@ -39,7 +38,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		2F5DF2F329C91681003E0267 /* MainScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainScreen.storyboard; sourceTree = "<group>"; };
 		2F5DF2F529C9171F003E0267 /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
 		2F5DF2F729C91756003E0267 /* MainScreenVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainScreenVC.storyboard; sourceTree = "<group>"; };
 		A9CB62A429B6AA72000683B4 /* PathPioneer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PathPioneer.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -109,7 +107,6 @@
 				A9CB62A929B6AA72000683B4 /* SceneDelegate.swift */,
 				A9CB62AB29B6AA72000683B4 /* ViewController.swift */,
 				A9CB62AD29B6AA72000683B4 /* Main.storyboard */,
-				2F5DF2F329C91681003E0267 /* MainScreen.storyboard */,
 				2F5DF2F529C9171F003E0267 /* Settings.storyboard */,
 				2F5DF2F729C91756003E0267 /* MainScreenVC.storyboard */,
 				A9CB62B029B6AA73000683B4 /* Assets.xcassets */,
@@ -241,7 +238,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				A9CB62B429B6AA73000683B4 /* LaunchScreen.storyboard in Resources */,
-				2F5DF2F429C91681003E0267 /* MainScreen.storyboard in Resources */,
 				A9CB62B129B6AA73000683B4 /* Assets.xcassets in Resources */,
 				A9CB62AF29B6AA72000683B4 /* Main.storyboard in Resources */,
 				2F5DF2F829C91756003E0267 /* MainScreenVC.storyboard in Resources */,
