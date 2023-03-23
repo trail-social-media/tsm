@@ -33,4 +33,4 @@ Group Brainstorming Document
 ### Hiking App
 * We think this will be the best type of app to create since it sounds like a unique idea that may not have been done before.
 * This app idea also seems do-able since we can use Apple's MapKit, which should allow us to create and save trails for users.
-* It may be diffuclt to incorporate the social media aspect of the app since we will have to figure out a way to store trails on the server but the rest of the functionality should be doable.
+* It may be diffuclt to incorporate the social media aspect of the app since we will have to figure out a way to store trails on the server but the rest of the functionality can definitely be implemented.
