@@ -1,5 +1,5 @@
 //
-//  SignUpViewController.swift
+//  HomeViewController.swift
 //  PathPioneer
 //
 //  Created by Dev Patel on 3/25/23.
@@ -7,18 +7,12 @@
 
 import UIKit
 
-class SignUpViewController: UIViewController {
+class HomeViewController: UIViewController {
 
-    @IBOutlet weak var passwordField: UITextField!
-    @IBOutlet weak var emailField: UITextField!
-    @IBOutlet weak var usernameField: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-    }
-    @IBAction func signUpButtonTapped(_ sender: Any) {
-        NotificationCenter.default.post(name: Notification.Name("login"), object: nil)
     }
     
 

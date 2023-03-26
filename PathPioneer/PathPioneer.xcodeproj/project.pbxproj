@@ -8,9 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		2F5DF2F629C9171F003E0267 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F5DF2F529C9171F003E0267 /* Settings.storyboard */; };
-		2F5DF2F829C91756003E0267 /* MainScreenVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F5DF2F729C91756003E0267 /* MainScreenVC.storyboard */; };
+		2FB9889829CFC2B700AE191C /* MapView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2FB9889729CFC2B700AE191C /* MapView.storyboard */; };
 		2FFE23F829CFB16A00AD9FA2 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FFE23F729CFB16A00AD9FA2 /* LoginViewController.swift */; };
 		2FFE23FA29CFB18500AD9FA2 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FFE23F929CFB18500AD9FA2 /* SignUpViewController.swift */; };
+		2FFE23FD29CFBA5000AD9FA2 /* ParseSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 2FFE23FC29CFBA5000AD9FA2 /* ParseSwift */; };
+		2FFE240029CFBA6300AD9FA2 /* AlamofireImage in Frameworks */ = {isa = PBXBuildFile; productRef = 2FFE23FF29CFBA6300AD9FA2 /* AlamofireImage */; };
+		2FFE240329CFBA6E00AD9FA2 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 2FFE240229CFBA6E00AD9FA2 /* Alamofire */; };
+		2FFE240529CFBF2400AD9FA2 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FFE240429CFBF2400AD9FA2 /* SettingsViewController.swift */; };
+		2FFE240729CFC19000AD9FA2 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FFE240629CFC19000AD9FA2 /* HomeViewController.swift */; };
 		A9CB62A829B6AA72000683B4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CB62A729B6AA72000683B4 /* AppDelegate.swift */; };
 		A9CB62AA29B6AA72000683B4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CB62A929B6AA72000683B4 /* SceneDelegate.swift */; };
 		A9CB62AC29B6AA72000683B4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CB62AB29B6AA72000683B4 /* ViewController.swift */; };
@@ -41,9 +46,11 @@
 
 /* Begin PBXFileReference section */
 		2F5DF2F529C9171F003E0267 /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
-		2F5DF2F729C91756003E0267 /* MainScreenVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainScreenVC.storyboard; sourceTree = "<group>"; };
+		2FB9889729CFC2B700AE191C /* MapView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MapView.storyboard; sourceTree = "<group>"; };
 		2FFE23F729CFB16A00AD9FA2 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		2FFE23F929CFB18500AD9FA2 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		2FFE240429CFBF2400AD9FA2 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		2FFE240629CFC19000AD9FA2 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		A9CB62A429B6AA72000683B4 /* PathPioneer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PathPioneer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9CB62A729B6AA72000683B4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A9CB62A929B6AA72000683B4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -64,6 +71,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2FFE240329CFBA6E00AD9FA2 /* Alamofire in Frameworks */,
+				2FFE23FD29CFBA5000AD9FA2 /* ParseSwift in Frameworks */,
+				2FFE240029CFBA6300AD9FA2 /* AlamofireImage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -93,6 +103,22 @@
 			path = Login;
 			sourceTree = "<group>";
 		};
+		2FFE240829CFC1A600AD9FA2 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				2FFE240429CFBF2400AD9FA2 /* SettingsViewController.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		2FFE240929CFC1B100AD9FA2 /* MapView */ = {
+			isa = PBXGroup;
+			children = (
+				2FFE240629CFC19000AD9FA2 /* HomeViewController.swift */,
+			);
+			path = MapView;
+			sourceTree = "<group>";
+		};
 		A9CB629B29B6AA72000683B4 = {
 			isa = PBXGroup;
 			children = (
@@ -119,10 +145,12 @@
 				A9CB62A729B6AA72000683B4 /* AppDelegate.swift */,
 				A9CB62A929B6AA72000683B4 /* SceneDelegate.swift */,
 				2FFE23F629CFB12400AD9FA2 /* Login */,
+				2FFE240929CFC1B100AD9FA2 /* MapView */,
+				2FFE240829CFC1A600AD9FA2 /* Settings */,
 				A9CB62AB29B6AA72000683B4 /* ViewController.swift */,
 				A9CB62AD29B6AA72000683B4 /* Main.storyboard */,
+				2FB9889729CFC2B700AE191C /* MapView.storyboard */,
 				2F5DF2F529C9171F003E0267 /* Settings.storyboard */,
-				2F5DF2F729C91756003E0267 /* MainScreenVC.storyboard */,
 				A9CB62B029B6AA73000683B4 /* Assets.xcassets */,
 				A9CB62B229B6AA73000683B4 /* LaunchScreen.storyboard */,
 				A9CB62B529B6AA73000683B4 /* Info.plist */,
@@ -163,6 +191,11 @@
 			dependencies = (
 			);
 			name = PathPioneer;
+			packageProductDependencies = (
+				2FFE23FC29CFBA5000AD9FA2 /* ParseSwift */,
+				2FFE23FF29CFBA6300AD9FA2 /* AlamofireImage */,
+				2FFE240229CFBA6E00AD9FA2 /* Alamofire */,
+			);
 			productName = tsm;
 			productReference = A9CB62A429B6AA72000683B4 /* PathPioneer.app */;
 			productType = "com.apple.product-type.application";
@@ -235,6 +268,11 @@
 				Base,
 			);
 			mainGroup = A9CB629B29B6AA72000683B4;
+			packageReferences = (
+				2FFE23FB29CFBA5000AD9FA2 /* XCRemoteSwiftPackageReference "Parse-Swift" */,
+				2FFE23FE29CFBA6300AD9FA2 /* XCRemoteSwiftPackageReference "AlamofireImage" */,
+				2FFE240129CFBA6E00AD9FA2 /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
 			productRefGroup = A9CB62A529B6AA72000683B4 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -254,7 +292,7 @@
 				A9CB62B429B6AA73000683B4 /* LaunchScreen.storyboard in Resources */,
 				A9CB62B129B6AA73000683B4 /* Assets.xcassets in Resources */,
 				A9CB62AF29B6AA72000683B4 /* Main.storyboard in Resources */,
-				2F5DF2F829C91756003E0267 /* MainScreenVC.storyboard in Resources */,
+				2FB9889829CFC2B700AE191C /* MapView.storyboard in Resources */,
 				2F5DF2F629C9171F003E0267 /* Settings.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -285,6 +323,8 @@
 				A9CB62A829B6AA72000683B4 /* AppDelegate.swift in Sources */,
 				A9CB62AA29B6AA72000683B4 /* SceneDelegate.swift in Sources */,
 				2FFE23FA29CFB18500AD9FA2 /* SignUpViewController.swift in Sources */,
+				2FFE240729CFC19000AD9FA2 /* HomeViewController.swift in Sources */,
+				2FFE240529CFBF2400AD9FA2 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -462,7 +502,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = tsm/Info.plist;
+				INFOPLIST_FILE = PathPioneer/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -489,7 +529,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = tsm/Info.plist;
+				INFOPLIST_FILE = PathPioneer/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -620,6 +660,51 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		2FFE23FB29CFBA5000AD9FA2 /* XCRemoteSwiftPackageReference "Parse-Swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/parse-community/Parse-Swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.0;
+			};
+		};
+		2FFE23FE29CFBA6300AD9FA2 /* XCRemoteSwiftPackageReference "AlamofireImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/AlamofireImage.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+		2FFE240129CFBA6E00AD9FA2 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		2FFE23FC29CFBA5000AD9FA2 /* ParseSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2FFE23FB29CFBA5000AD9FA2 /* XCRemoteSwiftPackageReference "Parse-Swift" */;
+			productName = ParseSwift;
+		};
+		2FFE23FF29CFBA6300AD9FA2 /* AlamofireImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2FFE23FE29CFBA6300AD9FA2 /* XCRemoteSwiftPackageReference "AlamofireImage" */;
+			productName = AlamofireImage;
+		};
+		2FFE240229CFBA6E00AD9FA2 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2FFE240129CFBA6E00AD9FA2 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = A9CB629C29B6AA72000683B4 /* Project object */;
 }

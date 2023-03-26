@@ -49,6 +49,9 @@
                                                 <rect key="frame" x="55.000000000000021" y="0.0" width="70.333333333333314" height="34.333333333333336"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="filled" title="Log In"/>
+                                                <connections>
+                                                    <action selector="loginButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="d5R-gi-7hf"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dhO-Tt-m4G">
                                                 <rect key="frame" x="0.0" y="42.333333333333371" width="180.66666666666666" height="34.333333333333343"/>
@@ -76,10 +79,14 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="OoF-ne-515"/>
+                    <connections>
+                        <outlet property="passwordField" destination="Ydy-MG-veN" id="dDP-gU-YSc"/>
+                        <outlet property="usernameField" destination="KXC-6S-yFA" id="jQE-UI-0O0"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="973.28244274809151" y="-174.64788732394368"/>
+            <point key="canvasLocation" x="929" y="-175"/>
         </scene>
         <!--Sign Up View Controller-->
         <scene sceneID="ghq-ys-KhR">
@@ -128,6 +135,9 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="84" height="34.333333333333336"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="filled" title="Sign Up"/>
+                                                <connections>
+                                                    <action selector="signUpButtonTapped:" destination="ap7-GF-IZc" eventType="touchUpInside" id="ag3-Lc-ikT"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -147,6 +157,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="EkN-bh-fsn"/>
+                    <connections>
+                        <outlet property="emailField" destination="OxV-tk-kkJ" id="92p-1R-krN"/>
+                        <outlet property="passwordField" destination="yaW-ld-AoH" id="6vV-co-F6E"/>
+                        <outlet property="usernameField" destination="AHV-eL-C13" id="qK7-EP-DDI"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YD7-Ts-8jq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -170,39 +185,39 @@
             </objects>
             <point key="canvasLocation" x="47" y="761"/>
         </scene>
-        <!--Item-->
+        <!--Map View-->
         <scene sceneID="LIX-zv-QmY">
             <objects>
                 <navigationController id="PqX-Ml-52r" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="U4D-hh-Oyd"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="mzO-iM-m2j">
+                    <tabBarItem key="tabBarItem" title="Map View" image="map.fill" catalog="system" id="U4D-hh-Oyd"/>
+                    <navigationBar key="navigationBar" hidden="YES" contentMode="scaleToFill" id="mzO-iM-m2j">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="aPg-Ew-Onk" kind="relationship" relationship="rootViewController" id="gHK-KN-Htd"/>
+                        <segue destination="TJ4-A5-Bbq" kind="relationship" relationship="rootViewController" id="Lwg-nN-Gee"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ar3-Vd-n9N" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="821" y="496"/>
         </scene>
-        <!--MainScreenVC-->
-        <scene sceneID="spy-ib-qCe">
+        <!--MapView-->
+        <scene sceneID="97X-M5-jXF">
             <objects>
-                <viewControllerPlaceholder storyboardName="MainScreenVC" id="aPg-Ew-Onk" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="K0U-QM-ZhQ"/>
+                <viewControllerPlaceholder storyboardName="MapView" id="TJ4-A5-Bbq" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="kqr-6w-yYA"/>
                 </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="nid-3O-hbU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6Lw-qc-BHG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1565" y="496"/>
+            <point key="canvasLocation" x="1542" y="501"/>
         </scene>
-        <!--Item-->
+        <!--Settings-->
         <scene sceneID="QOp-J9-Cm0">
             <objects>
                 <navigationController id="xJw-IJ-Y24" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="glq-f7-BTi"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="wW6-NC-ygx">
+                    <tabBarItem key="tabBarItem" title="Settings" image="gearshape" catalog="system" id="glq-f7-BTi"/>
+                    <navigationBar key="navigationBar" hidden="YES" contentMode="scaleToFill" id="wW6-NC-ygx">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -244,6 +259,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="gearshape" catalog="system" width="128" height="123"/>
+        <image name="map.fill" catalog="system" width="128" height="110"/>
         <systemColor name="opaqueSeparatorColor">
             <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
