@@ -86,9 +86,22 @@ Optional:
 [Add picture of your hand sketched wireframes in this section]
 <img src="https://i.imgur.com/5C6OuOg.png" width=600>
 
-### [BONUS] Digital Wireframes & Mockups
+## Sprint #1 
+[x] Create the required/necessary screens
+[x] Add the appropriate navigation functionality to the screns
+[x] Begin implementing the coding required to use the Map for creating trails
 
-### [BONUS] Interactive Prototype
+First Sprint Progress:
+We created the main screens that are necessary for the app (The maps and table views are not visible in this GIF since we don't have data for them yet)
+<img_src="https://github.com/trail-social-media/tsm/blob/main/Sprint%231.gif"
+
+## Plan for Sprint #2
+[ ] Finish implementing the ability for users to create map trails
+[ ] Create the table views required for the app
+[ ] Finish implementing most required features, ideally all of them
+[ ] Start working on the setting up the backend server connection for the app
+[ ] Start working on the optional features if possible
+
 
 ## Schema 
 [This section will be completed in Unit 9]
