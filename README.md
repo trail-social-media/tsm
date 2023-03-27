@@ -93,7 +93,7 @@ Optional:
 
 First Sprint Progress:
 We created the main screens that are necessary for the app (The maps and table views are not visible in this GIF since we don't have data for them yet)
-<img_src="https://github.com/trail-social-media/tsm/blob/main/Sprint%231.gif"
+<img_src="https://github.com/trail-social-media/tsm/blob/main/Sprint%231.gif">
 
 ## Plan for Sprint #2
 - [ ] Finish implementing the ability for users to create map trails
