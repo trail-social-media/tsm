@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Home View Controller-->
+        <!--Path Pioneer-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
                 <viewController id="Y6W-OH-hqX" customClass="HomeViewController" customModule="PathPioneer" customModuleProvider="target" sceneMemberID="viewController">
@@ -17,8 +17,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="4u4-Tp-7ee">
-                                <rect key="frame" x="8" y="103" width="377" height="436.66666666666674"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="4u4-Tp-7ee">
+                                <rect key="frame" x="8" y="103.00000000000003" width="377" height="436.66666666666674"/>
                                 <subviews>
                                     <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mG3-Eh-XqB">
                                         <rect key="frame" x="12.666666666666657" y="0.0" width="352" height="352"/>
@@ -55,12 +55,14 @@
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="4u4-Tp-7ee" secondAttribute="bottom" constant="16" id="6jB-c4-fcj"/>
                             <constraint firstItem="4u4-Tp-7ee" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" constant="-104.66666666666663" id="Hf7-HY-IML"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="4u4-Tp-7ee" secondAttribute="trailing" constant="8" id="MBJ-Md-Cxz"/>
+                            <constraint firstItem="4u4-Tp-7ee" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="d3s-pA-231"/>
                             <constraint firstItem="4u4-Tp-7ee" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="8" id="f8F-9B-0RU"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="7kj-d8-cET"/>
+                    <navigationItem key="navigationItem" title="Path Pioneer" id="7kj-d8-cET"/>
                     <connections>
                         <outlet property="mapView" destination="mG3-Eh-XqB" id="who-5U-M1G"/>
                     </connections>
@@ -166,31 +168,31 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="v92-N6-jbU">
-                                <rect key="frame" x="8" y="103" width="377" height="528.66666666666652"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="v92-N6-jbU">
+                                <rect key="frame" x="16" y="103" width="361" height="535"/>
                                 <subviews>
                                     <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GGl-us-bXM">
-                                        <rect key="frame" x="12.666666666666657" y="0.0" width="352" height="352"/>
+                                        <rect key="frame" x="4.6666666666666572" y="0.0" width="352" height="352"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="GGl-us-bXM" secondAttribute="height" multiplier="1:1" id="iaO-ct-I4O"/>
                                         </constraints>
                                         <standardMapConfiguration key="preferredConfiguration"/>
                                     </mapView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="J36-qc-XN1">
-                                        <rect key="frame" x="20" y="360" width="337" height="168.66666666666663"/>
+                                        <rect key="frame" x="0.0" y="360" width="361" height="175"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="33R-bM-Xv1">
-                                                <rect key="frame" x="0.0" y="0.0" width="337" height="34.333333333333336"/>
+                                                <rect key="frame" x="79.333333333333329" y="0.0" width="202.66666666666669" height="34.333333333333336"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yEp-IX-Owk" userLabel="Pu">
-                                                        <rect key="frame" x="0.0" y="0.0" width="164.66666666666666" height="34.333333333333336"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="97.333333333333329" height="34.333333333333336"/>
                                                         <color key="backgroundColor" systemColor="systemGreenColor"/>
                                                         <color key="tintColor" systemColor="systemGreenColor"/>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="filled" title="Start Trail"/>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6rK-g8-7q6">
-                                                        <rect key="frame" x="172.66666666666663" y="0.0" width="164.33333333333337" height="34.333333333333336"/>
+                                                        <rect key="frame" x="105.33333333333334" y="0.0" width="97.333333333333343" height="34.333333333333336"/>
                                                         <color key="backgroundColor" systemColor="systemRedColor"/>
                                                         <color key="tintColor" systemColor="systemRedColor"/>
                                                         <state key="normal" title="Button"/>
@@ -198,18 +200,13 @@
                                                     </button>
                                                 </subviews>
                                             </stackView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="sap-ND-HY6">
-                                                <rect key="frame" x="111" y="42.333333333333371" width="115" height="34.333333333333343"/>
-                                                <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ThL-Ci-QFa" userLabel="Pu">
-                                                        <rect key="frame" x="0.0" y="0.0" width="115" height="34.333333333333336"/>
-                                                        <state key="normal" title="Button"/>
-                                                        <buttonConfiguration key="configuration" style="filled" title="Restart Trail"/>
-                                                    </button>
-                                                </subviews>
-                                            </stackView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ThL-Ci-QFa" userLabel="Pu">
+                                                <rect key="frame" x="123" y="42.333333333333314" width="115" height="34.333333333333343"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="filled" title="Restart Trail"/>
+                                            </button>
                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Add a Description" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Cwu-zQ-1qo">
-                                                <rect key="frame" x="0.0" y="84.666666666666742" width="337" height="84"/>
+                                                <rect key="frame" x="0.0" y="84.666666666666629" width="361" height="90.333333333333314"/>
                                                 <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="Cwu-zQ-1qo" secondAttribute="height" multiplier="4:1" id="9nA-DE-WE4"/>
@@ -219,25 +216,25 @@
                                             </textField>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstItem="33R-bM-Xv1" firstAttribute="leading" secondItem="J36-qc-XN1" secondAttribute="leading" id="LUL-Zt-gXf"/>
-                                            <constraint firstAttribute="trailing" secondItem="33R-bM-Xv1" secondAttribute="trailing" id="aHO-fF-z2q"/>
-                                            <constraint firstItem="Cwu-zQ-1qo" firstAttribute="leading" secondItem="J36-qc-XN1" secondAttribute="leading" id="hCo-aC-y3p"/>
-                                            <constraint firstAttribute="trailing" secondItem="Cwu-zQ-1qo" secondAttribute="trailing" id="uiB-Ba-IJu"/>
+                                            <constraint firstItem="Cwu-zQ-1qo" firstAttribute="leading" secondItem="J36-qc-XN1" secondAttribute="leading" id="EC6-Ug-Xc8"/>
+                                            <constraint firstAttribute="trailing" secondItem="Cwu-zQ-1qo" secondAttribute="trailing" id="ymf-zN-K55"/>
                                         </constraints>
                                     </stackView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="J36-qc-XN1" firstAttribute="leading" secondItem="v92-N6-jbU" secondAttribute="leading" constant="20" id="IoW-3Y-doa"/>
-                                    <constraint firstAttribute="trailing" secondItem="J36-qc-XN1" secondAttribute="trailing" constant="20" id="weh-CT-0Zi"/>
+                                    <constraint firstAttribute="bottom" secondItem="J36-qc-XN1" secondAttribute="bottom" id="EY0-1S-Dyy"/>
+                                    <constraint firstItem="J36-qc-XN1" firstAttribute="leading" secondItem="v92-N6-jbU" secondAttribute="leading" id="LVW-Ip-vhi"/>
+                                    <constraint firstAttribute="trailing" secondItem="J36-qc-XN1" secondAttribute="trailing" id="zXQ-3M-B8h"/>
                                 </constraints>
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="y8p-20-3an"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="v92-N6-jbU" firstAttribute="centerY" secondItem="9Gd-V9-pr5" secondAttribute="centerY" id="GED-fC-KwW"/>
-                            <constraint firstAttribute="trailing" secondItem="v92-N6-jbU" secondAttribute="trailing" constant="8" id="Lwb-ee-AQH"/>
-                            <constraint firstItem="v92-N6-jbU" firstAttribute="leading" secondItem="y8p-20-3an" secondAttribute="leading" constant="8" id="Yu3-T5-dtS"/>
+                            <constraint firstItem="y8p-20-3an" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="v92-N6-jbU" secondAttribute="bottom" constant="16" id="UkD-6t-Hjr"/>
+                            <constraint firstItem="v92-N6-jbU" firstAttribute="top" secondItem="y8p-20-3an" secondAttribute="top" id="nua-mf-AGK"/>
+                            <constraint firstItem="v92-N6-jbU" firstAttribute="leading" secondItem="y8p-20-3an" secondAttribute="leading" constant="16" id="peg-1c-CWe"/>
+                            <constraint firstItem="y8p-20-3an" firstAttribute="trailing" secondItem="v92-N6-jbU" secondAttribute="trailing" constant="16" id="zZ7-BS-yq4"/>
                         </constraints>
                     </view>
                     <toolbarItems/>
@@ -255,7 +252,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mvZ-Hx-R9b" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2785" y="4"/>
+            <point key="canvasLocation" x="2783.969465648855" y="3.5211267605633805"/>
         </scene>
         <!--Trail Detail View Controller-->
         <scene sceneID="wTF-cl-dlo">
@@ -314,6 +311,10 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Hdv-A4-eTE">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
+                            <color key="textColor" systemColor="systemOrangeColor"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -336,6 +337,9 @@
         </systemColor>
         <systemColor name="systemGreenColor">
             <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemRedColor">
             <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
