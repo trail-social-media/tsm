@@ -25,6 +25,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         NotificationCenter.default.addObserver(forName: Notification.Name("logout"), object: nil, queue: OperationQueue.main) { [weak self] _ in
             self?.logout()
         }
+        
+        /*
+        if (User.current != nil) {
+            login()
+        }
+         */
     }
     
     private func login() {
@@ -33,6 +39,18 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
     
     private func logout() {
+        /*
+        User.logout { [weak self] result in
+            switch (result) {
+            case .success:
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                self.window?.rootViewController = storyboard.instantiateViewController(withIdentifier: "LoginNavigationController")
+            case .failure(let error):
+                print("❌ Log out error: \(error)")
+            }
+        }
+         */
+        
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         self.window?.rootViewController = storyboard.instantiateViewController(withIdentifier: "LoginNavigationController")
     }

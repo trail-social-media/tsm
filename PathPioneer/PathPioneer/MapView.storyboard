@@ -20,7 +20,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="4u4-Tp-7ee">
                                 <rect key="frame" x="8" y="103" width="377" height="436.66666666666674"/>
                                 <subviews>
-                                    <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mG3-Eh-XqB">
+                                    <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mG3-Eh-XqB">
                                         <rect key="frame" x="12.666666666666657" y="0.0" width="352" height="352"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="mG3-Eh-XqB" secondAttribute="height" multiplier="1:1" id="c4m-S2-3Xg"/>
