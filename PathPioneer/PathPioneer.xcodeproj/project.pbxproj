@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2F0DA42729DA1071002DC388 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F0DA42629DA1071002DC388 /* User.swift */; };
+		2F0DA42929DA1082002DC388 /* Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F0DA42829DA1082002DC388 /* Map.swift */; };
+		2F0DA42B29DA120A002DC388 /* CreateTrailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F0DA42A29DA120A002DC388 /* CreateTrailViewController.swift */; };
+		2F0DA42E29DA2875002DC388 /* ViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F0DA42D29DA2875002DC388 /* ViewController+Extensions.swift */; };
 		2F5DF2F629C9171F003E0267 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F5DF2F529C9171F003E0267 /* Settings.storyboard */; };
 		2FB9889829CFC2B700AE191C /* MapView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2FB9889729CFC2B700AE191C /* MapView.storyboard */; };
 		2FFE23F829CFB16A00AD9FA2 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FFE23F729CFB16A00AD9FA2 /* LoginViewController.swift */; };
@@ -18,7 +22,6 @@
 		2FFE240729CFC19000AD9FA2 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FFE240629CFC19000AD9FA2 /* HomeViewController.swift */; };
 		A9CB62A829B6AA72000683B4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CB62A729B6AA72000683B4 /* AppDelegate.swift */; };
 		A9CB62AA29B6AA72000683B4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CB62A929B6AA72000683B4 /* SceneDelegate.swift */; };
-		A9CB62AC29B6AA72000683B4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CB62AB29B6AA72000683B4 /* ViewController.swift */; };
 		A9CB62AF29B6AA72000683B4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9CB62AD29B6AA72000683B4 /* Main.storyboard */; };
 		A9CB62B129B6AA73000683B4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A9CB62B029B6AA73000683B4 /* Assets.xcassets */; };
 		A9CB62B429B6AA73000683B4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9CB62B229B6AA73000683B4 /* LaunchScreen.storyboard */; };
@@ -45,6 +48,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2F0DA42629DA1071002DC388 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		2F0DA42829DA1082002DC388 /* Map.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Map.swift; sourceTree = "<group>"; };
+		2F0DA42A29DA120A002DC388 /* CreateTrailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTrailViewController.swift; sourceTree = "<group>"; };
+		2F0DA42D29DA2875002DC388 /* ViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+Extensions.swift"; sourceTree = "<group>"; };
 		2F5DF2F529C9171F003E0267 /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
 		2FB9889729CFC2B700AE191C /* MapView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MapView.storyboard; sourceTree = "<group>"; };
 		2FFE23F729CFB16A00AD9FA2 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -54,7 +61,6 @@
 		A9CB62A429B6AA72000683B4 /* PathPioneer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PathPioneer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9CB62A729B6AA72000683B4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A9CB62A929B6AA72000683B4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		A9CB62AB29B6AA72000683B4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		A9CB62AE29B6AA72000683B4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A9CB62B029B6AA73000683B4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A9CB62B329B6AA73000683B4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -94,6 +100,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2F0DA42529DA1039002DC388 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				2F0DA42629DA1071002DC388 /* User.swift */,
+				2F0DA42829DA1082002DC388 /* Map.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		2F0DA42C29DA27DA002DC388 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				2F0DA42D29DA2875002DC388 /* ViewController+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		2FFE23F629CFB12400AD9FA2 /* Login */ = {
 			isa = PBXGroup;
 			children = (
@@ -115,6 +138,7 @@
 			isa = PBXGroup;
 			children = (
 				2FFE240629CFC19000AD9FA2 /* HomeViewController.swift */,
+				2F0DA42A29DA120A002DC388 /* CreateTrailViewController.swift */,
 			);
 			path = MapView;
 			sourceTree = "<group>";
@@ -144,10 +168,11 @@
 			children = (
 				A9CB62A729B6AA72000683B4 /* AppDelegate.swift */,
 				A9CB62A929B6AA72000683B4 /* SceneDelegate.swift */,
+				2F0DA42529DA1039002DC388 /* Models */,
 				2FFE23F629CFB12400AD9FA2 /* Login */,
 				2FFE240929CFC1B100AD9FA2 /* MapView */,
 				2FFE240829CFC1A600AD9FA2 /* Settings */,
-				A9CB62AB29B6AA72000683B4 /* ViewController.swift */,
+				2F0DA42C29DA27DA002DC388 /* Extensions */,
 				A9CB62AD29B6AA72000683B4 /* Main.storyboard */,
 				2FB9889729CFC2B700AE191C /* MapView.storyboard */,
 				2F5DF2F529C9171F003E0267 /* Settings.storyboard */,
@@ -319,11 +344,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				2FFE23F829CFB16A00AD9FA2 /* LoginViewController.swift in Sources */,
-				A9CB62AC29B6AA72000683B4 /* ViewController.swift in Sources */,
+				2F0DA42B29DA120A002DC388 /* CreateTrailViewController.swift in Sources */,
 				A9CB62A829B6AA72000683B4 /* AppDelegate.swift in Sources */,
 				A9CB62AA29B6AA72000683B4 /* SceneDelegate.swift in Sources */,
+				2F0DA42729DA1071002DC388 /* User.swift in Sources */,
 				2FFE23FA29CFB18500AD9FA2 /* SignUpViewController.swift in Sources */,
+				2F0DA42E29DA2875002DC388 /* ViewController+Extensions.swift in Sources */,
 				2FFE240729CFC19000AD9FA2 /* HomeViewController.swift in Sources */,
+				2F0DA42929DA1082002DC388 /* Map.swift in Sources */,
 				2FFE240529CFBF2400AD9FA2 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -503,6 +531,9 @@
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = PathPioneer/Info.plist;
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "This app requires constant location services in order to track your trail";
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "This app requires constant location services in order to track your trail";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "This app requires constant location services in order to track your trail";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -530,6 +561,9 @@
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = PathPioneer/Info.plist;
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "This app requires constant location services in order to track your trail";
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "This app requires constant location services in order to track your trail";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "This app requires constant location services in order to track your trail";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;

@@ -20,7 +20,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="4u4-Tp-7ee">
                                 <rect key="frame" x="8" y="103" width="377" height="436.66666666666674"/>
                                 <subviews>
-                                    <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mG3-Eh-XqB">
+                                    <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mG3-Eh-XqB">
                                         <rect key="frame" x="12.666666666666657" y="0.0" width="352" height="352"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="mG3-Eh-XqB" secondAttribute="height" multiplier="1:1" id="c4m-S2-3Xg"/>
@@ -33,7 +33,7 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Ij-4N-hp2" userLabel="Pu">
                                                 <rect key="frame" x="0.0" y="0.0" width="317" height="34.333333333333336"/>
                                                 <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="filled" title="My Maps"/>
+                                                <buttonConfiguration key="configuration" style="filled" title="My Trails"/>
                                                 <connections>
                                                     <segue destination="HxY-ad-Yey" kind="show" id="lEe-sV-8vx"/>
                                                 </connections>
@@ -61,6 +61,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="7kj-d8-cET"/>
+                    <connections>
+                        <outlet property="mapView" destination="mG3-Eh-XqB" id="who-5U-M1G"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
