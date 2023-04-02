@@ -10,7 +10,18 @@ import UIKit
 class SettingsViewController: UIViewController {
 
     @IBAction func logoutButtonTapped(_ sender: Any) {
-        NotificationCenter.default.post(name: Notification.Name("logout"), object: nil)
+        
+        let alertController = UIAlertController(title: "Logout of \(User.current?.username ?? "current account")?", message: nil, preferredStyle: .alert)
+        
+        let logoutAction = UIAlertAction(title: "Log Out", style: .destructive) { _ in
+            NotificationCenter.default.post(name: Notification.Name("logout"), object: nil)
+        }
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
+        
+        alertController.addAction(logoutAction)
+        alertController.addAction(cancelAction)
+        
+        present(alertController, animated: true)
     }
     
     override func viewDidLoad() {

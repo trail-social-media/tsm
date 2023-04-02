@@ -6,7 +6,7 @@
 //
 
 import Foundation
-/*
+
  import ParseSwift
  
  struct User: ParseUser {
@@ -24,6 +24,5 @@ import Foundation
  var password: String?
  var authData: [String: [String: String]?]?
  
- var lastPostedDate: Date?
  }
- */
+ 

@@ -14,7 +14,7 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var usernameField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
     @IBAction func loginButtonTapped(_ sender: Any) {
-        /*
+        
         guard let username = usernameField.text,
               let password = passwordField.text,
               !username.isEmpty,
@@ -35,11 +35,12 @@ class LoginViewController: UIViewController {
                 self?.showAlert(description: error.localizedDescription)
             }
         }
-         */
         
+        /*
         // For now, just pressing login will allow user to login
         
         NotificationCenter.default.post(name: Notification.Name("login"), object: nil)
+         */
     }
     override func viewDidLoad() {
         super.viewDidLoad()

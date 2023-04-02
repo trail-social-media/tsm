@@ -22,17 +22,50 @@ class HomeViewController: UIViewController {
         locationManager.delegate = self;
 
         // user activated automatic authorization info mode
-        let status = locationManager.authorizationStatus
-        locationManager.requestAlwaysAuthorization()
+        var status = locationManager.authorizationStatus
         
-        locationManager.startUpdatingLocation()
-        //locationManager.startUpdatingHeading()
+        switch (status) {
+        case .authorizedAlways, .authorizedWhenInUse:
+            break;
+        case .notDetermined:
+            locationManager.requestWhenInUseAuthorization()
+        default:
+            print("Location Servies: Denied / Restricted")
+            presentGoToSettingsAlert()
+        }
+        
+        status = locationManager.authorizationStatus
+        if ((status == .authorizedAlways) || (status == .authorizedWhenInUse)) {
+            locationManager.startUpdatingLocation()
+            locationManager.startUpdatingHeading()
+            mapView.showsUserLocation = true
+        }
         
         // Do any additional setup after loading the view.
         
         //mapView.delegate = self
-        mapView.showsUserLocation = true
         //mapView.userTrackingMode = .follow
+    }
+    
+    func presentGoToSettingsAlert() {
+        let alertController = UIAlertController (
+            title: "Location Access Required",
+            message: "In order to use the features of this app, location services need to be enabled. You can enable them in settings",
+            preferredStyle: .alert)
+
+        let settingsAction = UIAlertAction(title: "Settings", style: .default) { _ in
+            guard let settingsUrl = URL(string: UIApplication.openSettingsURLString) else { return }
+
+            if UIApplication.shared.canOpenURL(settingsUrl) {
+                UIApplication.shared.open(settingsUrl)
+            }
+        }
+
+        alertController.addAction(settingsAction)
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        alertController.addAction(cancelAction)
+
+        present(alertController, animated: true, completion: nil)
     }
     
 

@@ -18,7 +18,6 @@ class SignUpViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     @IBAction func signUpButtonTapped(_ sender: Any) {
-        /*
         guard let username = usernameField.text,
               let password = passwordField.text,
               let email = emailField.text,
@@ -46,9 +45,9 @@ class SignUpViewController: UIViewController {
                 self?.showAlert(description: error.localizedDescription)
             }
         }
-        */
-        
+        /*
         NotificationCenter.default.post(name: Notification.Name("login"), object: nil)
+         */
     }
     
     private func showMissingFieldsAlert() {
