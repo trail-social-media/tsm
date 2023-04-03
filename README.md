@@ -121,7 +121,13 @@ Second Sprint Progress:
 ## Schema 
 [This section will be completed in Unit 9]
 ### Models
-[Add table of models]
+| User | Trail |
+| --- | --- |
+| Username | Trail name|
+| Email | Trail Description |
+| Password | Trail locations |
+| Profile Picture | Trail Picture |
+
 ### Networking
 - [Add list of network requests by screen ]
 - [Create basic snippets for each Parse network request]
