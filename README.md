@@ -103,6 +103,20 @@ We created the main screens that are necessary for the app (The maps and table v
 - [ ] Start working on the setting up the backend server connection for the app
 - [ ] Start working on the optional features if possible
 
+Second Sprint Progress:
+- [x] Added Login and Signup network requests
+- [x] Create the table views required for the app
+- [x] Map now simulates live location data
+- [x] Started working on the setting up the backend server connection for the app
+- [x] Started working on the optional features if possible
+<img src="https://github.com/trail-social-media/tsm/blob/main/Sprint%232.gif">
+
+## Final Plan
+- [ ] Create routes using the live location data
+- [ ] Finish working on saving user trails to the server
+- [ ] Finish working on fetching user trails from the server
+- [ ] Add the social media feature of the app if possible
+
 
 ## Schema 
 [This section will be completed in Unit 9]
