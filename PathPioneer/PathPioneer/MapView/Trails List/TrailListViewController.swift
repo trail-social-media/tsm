@@ -54,7 +54,6 @@ class TrailListViewController: UIViewController {
             
             trailDetailViewController.trail = trail
         }
-
     }
 }
 

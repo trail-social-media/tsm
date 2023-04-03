@@ -12,6 +12,7 @@ import CoreLocation
 class HomeViewController: UIViewController {
     
     var locationManager: CLLocationManager!
+    var oldLocation: CLLocation! = nil
 
     @IBOutlet weak var mapView: MKMapView!
     override func viewDidLoad() {
@@ -42,8 +43,8 @@ class HomeViewController: UIViewController {
             //mapview setup to show user location
             mapView.delegate = self
             mapView.mapType = MKMapType(rawValue: 0)!
-            mapView.userTrackingMode = MKUserTrackingMode(rawValue: 2)!
-
+            //mapView.userTrackingMode = MKUserTrackingMode(rawValue: 2)!
+            mapView.userTrackingMode = .follow
         }
         
         // Do any additional setup after loading the view.
@@ -87,11 +88,29 @@ class HomeViewController: UIViewController {
 }
 
 extension HomeViewController: CLLocationManagerDelegate {
-//    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-//        if let location = locations.first {
-//            print("present location : \(location.coordinate.latitude), \(location.coordinate.longitude)")
-//        }
-//    }
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        /*
+        if let location = locations.first {
+            print("present location : \(location.coordinate.latitude), \(location.coordinate.longitude)")
+        }
+         */
+        if oldLocation == nil {
+            oldLocation = locations.first as CLLocation?
+            return
+        }
+        
+        if let newLocation = locations.first as CLLocation?,
+           newLocation.coordinate.latitude != oldLocation.coordinate.latitude,
+           newLocation.coordinate.longitude != oldLocation.coordinate.longitude {
+            let oldCoordinates = oldLocation.coordinate
+            let newCoordinates = newLocation.coordinate
+            var area = [oldCoordinates, newCoordinates]
+            var polyline = MKPolyline(coordinates: &area, count: area.count)
+            self.mapView.addOverlay(polyline)
+            print("Polyline added for old coord: [\(oldLocation.coordinate.latitude),  \(oldLocation.coordinate.longitude)] to new coord: [\(newLocation.coordinate.latitude), \(newLocation.coordinate.longitude)]")
+            oldLocation = newLocation
+        }
+    }
     
     func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
         switch manager.authorizationStatus {
@@ -114,23 +133,25 @@ extension HomeViewController: CLLocationManagerDelegate {
         print(error.localizedDescription)
     }
     */
+    /*
     func locationManager(manager: CLLocationManager!, didUpdateToLocation newLocation: CLLocation!, fromLocation oldLocation: CLLocation!) {
-        let oldCoordinates = oldLocation.coordinate
+        if let oldLocationNew = oldLocation as CLLocation? {
+             let oldCoordinates = oldLocationNew.coordinate
              let newCoordinates = newLocation.coordinate
              var area = [oldCoordinates, newCoordinates]
              var polyline = MKPolyline(coordinates: &area, count: area.count)
-             mapView.addOverlay(polyline)
+             self.mapView.addOverlay(polyline)
+        }
     }
+     */
 }
 
 extension HomeViewController: MKMapViewDelegate {
-    func mapView(mapView: MKMapView!, rendererForOverlay overlay: MKOverlay!) -> MKOverlayRenderer! {
-        if (overlay is MKPolyline) {
-            var pr = MKPolylineRenderer(overlay: overlay)
-            pr.strokeColor = UIColor.red
-            pr.lineWidth = 5
-            return pr
-        }
-        return nil
+    func mapView(_ mapView: MKMapView!, rendererFor overlay: MKOverlay!) -> MKOverlayRenderer! {
+        let pr = MKPolylineRenderer(overlay: overlay)
+        pr.strokeColor = UIColor.red
+        pr.lineWidth = 5
+        return pr
+
     }
 }
