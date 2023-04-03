@@ -6,13 +6,22 @@
 //
 
 import UIKit
+import MapKit
 
 class TrailDetailViewController: UIViewController {
 
+    @IBOutlet weak var trailMap: MKMapView!
+    @IBOutlet weak var trailName: UILabel!
+    @IBOutlet weak var trailDesc: UILabel!
+    
+    var trail: Trail!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        trailName.text = trail.trailName
+        trailDesc.text = trail.trailDesc
     }
     
 

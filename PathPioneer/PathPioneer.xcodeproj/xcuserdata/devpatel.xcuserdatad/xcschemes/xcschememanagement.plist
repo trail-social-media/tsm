@@ -28,12 +28,30 @@
 		<key>PathPioneer.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>0</integer>
+			<integer>1</integer>
 		</dict>
 		<key>tsm.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>A9CB62A329B6AA72000683B4</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A9CB62B929B6AA73000683B4</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A9CB62C329B6AA73000683B4</key>
+		<dict>
+			<key>primary</key>
+			<true/>
 		</dict>
 	</dict>
 </dict>

@@ -39,6 +39,11 @@ class HomeViewController: UIViewController {
             locationManager.startUpdatingLocation()
             locationManager.startUpdatingHeading()
             mapView.showsUserLocation = true
+            //mapview setup to show user location
+            mapView.delegate = self
+            mapView.mapType = MKMapType(rawValue: 0)!
+            mapView.userTrackingMode = MKUserTrackingMode(rawValue: 2)!
+
         }
         
         // Do any additional setup after loading the view.
@@ -82,11 +87,11 @@ class HomeViewController: UIViewController {
 }
 
 extension HomeViewController: CLLocationManagerDelegate {
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        if let location = locations.first {
-            print("present location : \(location.coordinate.latitude), \(location.coordinate.longitude)")
-        }
-    }
+//    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+//        if let location = locations.first {
+//            print("present location : \(location.coordinate.latitude), \(location.coordinate.longitude)")
+//        }
+//    }
     
     func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
         switch manager.authorizationStatus {
@@ -109,5 +114,23 @@ extension HomeViewController: CLLocationManagerDelegate {
         print(error.localizedDescription)
     }
     */
-    
+    func locationManager(manager: CLLocationManager!, didUpdateToLocation newLocation: CLLocation!, fromLocation oldLocation: CLLocation!) {
+        let oldCoordinates = oldLocation.coordinate
+             let newCoordinates = newLocation.coordinate
+             var area = [oldCoordinates, newCoordinates]
+             var polyline = MKPolyline(coordinates: &area, count: area.count)
+             mapView.addOverlay(polyline)
+    }
+}
+
+extension HomeViewController: MKMapViewDelegate {
+    func mapView(mapView: MKMapView!, rendererForOverlay overlay: MKOverlay!) -> MKOverlayRenderer! {
+        if (overlay is MKPolyline) {
+            var pr = MKPolylineRenderer(overlay: overlay)
+            pr.strokeColor = UIColor.red
+            pr.lineWidth = 5
+            return pr
+        }
+        return nil
+    }
 }
