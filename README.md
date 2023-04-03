@@ -129,6 +129,19 @@ Second Sprint Progress:
 | Profile Picture | Trail Picture |
 
 ### Networking
-- [Add list of network requests by screen ]
-- [Create basic snippets for each Parse network request]
+- Login Screen
+  * Username and password sent to server for login verification
+  * Done using User.login
+- Sign Up Screen
+  * New Username, email, and password are sent to the server for creating new account
+  * Done using newUser.signup
+- Trail Creation Screen (NOT DONE YET)
+  * Save trail to server 
+  * Will be done using trail.save
+- Trail Table View Screen
+  * User's saved trails' information is requested
+  * Done using query.find
+- Account/Settings screen
+  * User's information and profile picture are fetched
+  * Done using query.find
 - [OPTIONAL: List endpoints if using existing API such as Yelp]
