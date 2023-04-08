@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="4u4-Tp-7ee">
-                                <rect key="frame" x="8" y="103.00000000000003" width="377" height="431.66666666666674"/>
+                                <rect key="frame" x="8" y="103" width="377" height="516.33333333333337"/>
                                 <subviews>
                                     <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mG3-Eh-XqB">
                                         <rect key="frame" x="15" y="0.0" width="347" height="347"/>
@@ -27,8 +27,53 @@
                                         </constraints>
                                         <standardMapConfiguration key="preferredConfiguration"/>
                                     </mapView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="kTl-Ow-9G4">
+                                        <rect key="frame" x="15" y="355" width="347" height="34.333333333333314"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PvW-DW-bJA" userLabel="Pu">
+                                                <rect key="frame" x="0.0" y="0.0" width="169.66666666666666" height="34.333333333333336"/>
+                                                <color key="tintColor" systemColor="systemGreenColor"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="filled" title="Start Trail"/>
+                                                <connections>
+                                                    <action selector="startButtonTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="46G-TM-GaF"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iWq-U6-eKQ">
+                                                <rect key="frame" x="177.66666666666663" y="0.0" width="169.33333333333337" height="34.333333333333336"/>
+                                                <color key="tintColor" systemColor="systemRedColor"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="filled" title="Stop Trail"/>
+                                                <connections>
+                                                    <action selector="stopButtonTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="8V4-sl-ORJ"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="bJt-pK-ZMS">
+                                        <rect key="frame" x="73.666666666666686" y="397.33333333333331" width="230" height="34.333333333333314"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XrS-oR-Kj9" userLabel="Pu">
+                                                <rect key="frame" x="0.0" y="0.0" width="111" height="34.333333333333336"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="filled" title="Restart"/>
+                                                <connections>
+                                                    <action selector="restartButtonTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="zZk-NB-lF1"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zjW-W5-z98">
+                                                <rect key="frame" x="119" y="0.0" width="111" height="34.333333333333336"/>
+                                                <color key="tintColor" systemColor="systemOrangeColor"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="filled" title="Create Trail"/>
+                                                <connections>
+                                                    <segue destination="5gj-Ot-ugA" kind="show" identifier="createSegue" id="cc7-1w-Yxk"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="LmD-v2-PNT">
-                                        <rect key="frame" x="30" y="355" width="317" height="76.666666666666686"/>
+                                        <rect key="frame" x="30" y="439.66666666666663" width="317" height="76.666666666666629"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Ij-4N-hp2" userLabel="Pu">
                                                 <rect key="frame" x="0.0" y="0.0" width="317" height="34.333333333333336"/>
@@ -39,17 +84,18 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YvX-5b-8ab">
-                                                <rect key="frame" x="0.0" y="42.333333333333314" width="317" height="34.333333333333343"/>
+                                                <rect key="frame" x="0.0" y="42.333333333333371" width="317" height="34.333333333333343"/>
                                                 <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="filled" title="Public Maps"/>
+                                                <buttonConfiguration key="configuration" style="filled" title="Public Trails"/>
                                             </button>
                                         </subviews>
                                     </stackView>
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="mG3-Eh-XqB" secondAttribute="trailing" constant="15" id="4QL-Bc-dtV"/>
+                                    <constraint firstAttribute="trailing" secondItem="kTl-Ow-9G4" secondAttribute="trailing" constant="15" id="Eiy-DV-mK4"/>
                                     <constraint firstItem="mG3-Eh-XqB" firstAttribute="leading" secondItem="4u4-Tp-7ee" secondAttribute="leading" constant="15" id="PGX-pk-z0L"/>
-                                    <constraint firstItem="LmD-v2-PNT" firstAttribute="top" secondItem="mG3-Eh-XqB" secondAttribute="bottom" constant="8" id="dZv-vT-9u9"/>
+                                    <constraint firstItem="kTl-Ow-9G4" firstAttribute="leading" secondItem="4u4-Tp-7ee" secondAttribute="leading" constant="15" id="QM9-x8-qwu"/>
                                     <constraint firstAttribute="trailing" secondItem="LmD-v2-PNT" secondAttribute="trailing" constant="30" id="iyT-df-FWi"/>
                                     <constraint firstItem="LmD-v2-PNT" firstAttribute="leading" secondItem="4u4-Tp-7ee" secondAttribute="leading" constant="30" id="uSE-PY-AoX"/>
                                 </constraints>
@@ -66,7 +112,11 @@
                     </view>
                     <navigationItem key="navigationItem" title="Path Pioneer" id="7kj-d8-cET"/>
                     <connections>
+                        <outlet property="createButton" destination="zjW-W5-z98" id="pch-l5-Q0l"/>
                         <outlet property="mapView" destination="mG3-Eh-XqB" id="who-5U-M1G"/>
+                        <outlet property="restartButton" destination="XrS-oR-Kj9" id="rEy-UG-FMf"/>
+                        <outlet property="startButton" destination="PvW-DW-bJA" id="9Pt-At-JUz"/>
+                        <outlet property="stopButton" destination="iWq-U6-eKQ" id="pIe-PQ-vEa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -156,9 +206,6 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="plus" catalog="system" title="New Trail"/>
-                                <connections>
-                                    <segue destination="5gj-Ot-ugA" kind="show" id="nX2-Os-vJ8"/>
-                                </connections>
                             </button>
                         </barButtonItem>
                     </navigationItem>
@@ -179,44 +226,57 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="v92-N6-jbU">
-                                <rect key="frame" x="16" y="103" width="361" height="514"/>
+                                <rect key="frame" x="16" y="103" width="361" height="644.66666666666663"/>
                                 <subviews>
-                                    <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GGl-us-bXM">
-                                        <rect key="frame" x="15" y="0.0" width="331" height="331"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="AJN-14-P9A">
+                                        <rect key="frame" x="0.0" y="0.0" width="361" height="361"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" secondItem="GGl-us-bXM" secondAttribute="height" multiplier="1:1" id="iaO-ct-I4O"/>
+                                            <constraint firstAttribute="width" secondItem="AJN-14-P9A" secondAttribute="height" multiplier="1:1" id="oGb-3w-5Ol"/>
                                         </constraints>
-                                        <standardMapConfiguration key="preferredConfiguration"/>
-                                    </mapView>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IKA-N7-5sq" userLabel="Pu">
+                                        <rect key="frame" x="0.0" y="369" width="361" height="34.333333333333314"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="Take Photo"/>
+                                        <connections>
+                                            <action selector="selectPhotosTapped:" destination="5gj-Ot-ugA" eventType="touchUpInside" id="d3T-VI-SHZ"/>
+                                            <action selector="takePhotoTapped:" destination="5gj-Ot-ugA" eventType="touchUpInside" id="DKl-cA-Wbs"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ThL-Ci-QFa" userLabel="Pu">
+                                        <rect key="frame" x="113.33333333333336" y="411.33333333333337" width="134.66666666666663" height="34.333333333333314"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Select Photo..."/>
+                                        <connections>
+                                            <action selector="selectPhotosTapped:" destination="5gj-Ot-ugA" eventType="touchUpInside" id="S9u-RZ-pPQ"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eKy-mF-xs1">
+                                        <rect key="frame" x="0.0" y="453.66666666666663" width="361" height="20.333333333333314"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Add a Title" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QiK-6y-eYc">
+                                        <rect key="frame" x="0.0" y="482" width="361" height="36"/>
+                                        <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="QiK-6y-eYc" secondAttribute="height" multiplier="10:1" id="Wvo-EH-q1i"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="J36-qc-XN1">
-                                        <rect key="frame" x="0.0" y="339" width="361" height="175"/>
+                                        <rect key="frame" x="0.0" y="526" width="361" height="118.66666666666663"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="33R-bM-Xv1">
-                                                <rect key="frame" x="79.333333333333329" y="0.0" width="202.66666666666669" height="34.333333333333336"/>
-                                                <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yEp-IX-Owk" userLabel="Pu">
-                                                        <rect key="frame" x="0.0" y="0.0" width="97.333333333333329" height="34.333333333333336"/>
-                                                        <color key="backgroundColor" systemColor="systemGreenColor"/>
-                                                        <color key="tintColor" systemColor="systemGreenColor"/>
-                                                        <state key="normal" title="Button"/>
-                                                        <buttonConfiguration key="configuration" style="filled" title="Start Trail"/>
-                                                    </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6rK-g8-7q6">
-                                                        <rect key="frame" x="105.33333333333334" y="0.0" width="97.333333333333343" height="34.333333333333336"/>
-                                                        <color key="backgroundColor" systemColor="systemRedColor"/>
-                                                        <color key="tintColor" systemColor="systemRedColor"/>
-                                                        <state key="normal" title="Button"/>
-                                                        <buttonConfiguration key="configuration" style="filled" title="Stop Trail"/>
-                                                    </button>
-                                                </subviews>
-                                            </stackView>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ThL-Ci-QFa" userLabel="Pu">
-                                                <rect key="frame" x="123" y="42.333333333333314" width="115" height="34.333333333333343"/>
-                                                <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="filled" title="Restart Trail"/>
-                                            </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="heO-d6-E6Q">
+                                                <rect key="frame" x="0.0" y="0.0" width="361" height="20.333333333333332"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Add a Description" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Cwu-zQ-1qo">
-                                                <rect key="frame" x="0.0" y="84.666666666666629" width="361" height="90.333333333333314"/>
+                                                <rect key="frame" x="0.0" y="28.333333333333364" width="361" height="90.333333333333314"/>
                                                 <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="Cwu-zQ-1qo" secondAttribute="height" multiplier="4:1" id="9nA-DE-WE4"/>
@@ -227,15 +287,21 @@
                                         </subviews>
                                         <constraints>
                                             <constraint firstItem="Cwu-zQ-1qo" firstAttribute="leading" secondItem="J36-qc-XN1" secondAttribute="leading" id="EC6-Ug-Xc8"/>
+                                            <constraint firstItem="heO-d6-E6Q" firstAttribute="leading" secondItem="J36-qc-XN1" secondAttribute="leading" id="iOB-Zp-KuJ"/>
                                             <constraint firstAttribute="trailing" secondItem="Cwu-zQ-1qo" secondAttribute="trailing" id="ymf-zN-K55"/>
                                         </constraints>
                                     </stackView>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="AJN-14-P9A" secondAttribute="trailing" id="2f2-vp-0bF"/>
+                                    <constraint firstAttribute="trailing" secondItem="QiK-6y-eYc" secondAttribute="trailing" id="8ga-M4-7J2"/>
                                     <constraint firstAttribute="bottom" secondItem="J36-qc-XN1" secondAttribute="bottom" id="EY0-1S-Dyy"/>
                                     <constraint firstItem="J36-qc-XN1" firstAttribute="leading" secondItem="v92-N6-jbU" secondAttribute="leading" id="LVW-Ip-vhi"/>
-                                    <constraint firstItem="GGl-us-bXM" firstAttribute="leading" secondItem="v92-N6-jbU" secondAttribute="leading" constant="15" id="NcB-d2-7qV"/>
-                                    <constraint firstAttribute="trailing" secondItem="GGl-us-bXM" secondAttribute="trailing" constant="15" id="vZk-RD-Yx4"/>
+                                    <constraint firstItem="eKy-mF-xs1" firstAttribute="leading" secondItem="v92-N6-jbU" secondAttribute="leading" id="RQl-4W-mbI"/>
+                                    <constraint firstItem="AJN-14-P9A" firstAttribute="leading" secondItem="v92-N6-jbU" secondAttribute="leading" id="Sbm-v5-LsA"/>
+                                    <constraint firstItem="QiK-6y-eYc" firstAttribute="leading" secondItem="v92-N6-jbU" secondAttribute="leading" id="ZAs-fH-ynI"/>
+                                    <constraint firstItem="IKA-N7-5sq" firstAttribute="leading" secondItem="v92-N6-jbU" secondAttribute="leading" id="fca-KD-6Pw"/>
+                                    <constraint firstAttribute="trailing" secondItem="IKA-N7-5sq" secondAttribute="trailing" id="k2Y-33-cEo"/>
                                     <constraint firstAttribute="trailing" secondItem="J36-qc-XN1" secondAttribute="trailing" id="zXQ-3M-B8h"/>
                                 </constraints>
                             </stackView>
@@ -257,14 +323,22 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="checkmark" catalog="system" title="Create"/>
+                                <connections>
+                                    <action selector="createButtonTapped:" destination="5gj-Ot-ugA" eventType="touchUpInside" id="2YQ-Rv-xgN"/>
+                                </connections>
                             </button>
                         </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="trailDescField" destination="Cwu-zQ-1qo" id="nGQ-Id-fb7"/>
+                        <outlet property="trailImageView" destination="AJN-14-P9A" id="kYB-wK-ooM"/>
+                        <outlet property="trailNameField" destination="QiK-6y-eYc" id="Zdq-hx-h7u"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mvZ-Hx-R9b" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2783.969465648855" y="3.5211267605633805"/>
+            <point key="canvasLocation" x="866" y="765"/>
         </scene>
         <!--Trail Detail View Controller-->
         <scene sceneID="wTF-cl-dlo">
@@ -303,22 +377,11 @@
                                     <constraint firstAttribute="trailing" secondItem="JIe-zG-4Ar" secondAttribute="trailing" id="h6U-gR-mpK"/>
                                 </constraints>
                             </stackView>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LZU-7q-Oni">
-                                <rect key="frame" x="229" y="603" width="51" height="31"/>
-                            </switch>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Show/Hide" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vtw-WC-qfc">
-                                <rect key="frame" x="116" y="615" width="95" height="24"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="UIr-PQ-azP"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="gb7-Tv-xHQ" firstAttribute="leading" secondItem="UIr-PQ-azP" secondAttribute="leading" constant="20" id="SDv-GF-4px"/>
-                            <constraint firstItem="LZU-7q-Oni" firstAttribute="top" relation="greaterThanOrEqual" secondItem="gb7-Tv-xHQ" secondAttribute="bottom" constant="16" id="THh-6o-IMr"/>
                             <constraint firstItem="gb7-Tv-xHQ" firstAttribute="top" secondItem="UIr-PQ-azP" secondAttribute="top" id="aGd-T2-Wt1"/>
                             <constraint firstItem="UIr-PQ-azP" firstAttribute="trailing" secondItem="gb7-Tv-xHQ" secondAttribute="trailing" constant="20" id="je8-dx-Pwf"/>
                         </constraints>

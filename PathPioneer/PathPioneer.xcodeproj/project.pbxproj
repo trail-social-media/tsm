@@ -112,8 +112,8 @@
 			isa = PBXGroup;
 			children = (
 				2F0DA42629DA1071002DC388 /* User.swift */,
-				2F0DA42829DA1082002DC388 /* Map.swift */,
 				2F0DA45629DA55FB002DC388 /* Trail.swift */,
+				2F0DA42829DA1082002DC388 /* Map.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -157,8 +157,8 @@
 			children = (
 				2FFE240629CFC19000AD9FA2 /* HomeViewController.swift */,
 				2F0DA42A29DA120A002DC388 /* CreateTrailViewController.swift */,
-				2F0DA45329DA5586002DC388 /* Trails List */,
 				2F0DA45129DA4480002DC388 /* TrailDetailViewController.swift */,
+				2F0DA45329DA5586002DC388 /* Trails List */,
 			);
 			path = MapView;
 			sourceTree = "<group>";

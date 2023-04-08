@@ -6,20 +6,47 @@
 //
 
 import UIKit
+import ParseSwift
 
 class TrailListViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
-    var trails: [Trail] = []
+    private var trails = [Trail]() {
+        didSet {
+            // Reload table view anytine the data in var posts changes
+            tableView.reloadData()
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        trails = Trail.mockTrails
-        
+        tableView.delegate = self
         tableView.dataSource = self
 
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        queryTrails()
+    }
+    
+    private func queryTrails() {
+        let query = Trail.query()
+            .include("user")
+            .order([.descending("createdAt")])
+        
+        // Fetch posts defined in query asynchronously
+        query.find { [weak self] result in
+            switch result {
+            case .success(let trails):
+                self?.trails = trails
+            case .failure(let error):
+                self?.showAlert(description: error.localizedDescription)
+            }
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -74,3 +101,5 @@ extension TrailListViewController: UITableViewDataSource {
     
     
 }
+
+extension TrailListViewController: UITableViewDelegate { }
