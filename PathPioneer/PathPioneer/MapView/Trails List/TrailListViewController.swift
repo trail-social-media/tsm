@@ -57,7 +57,6 @@ class TrailListViewController: UIViewController {
         }
         
     }
-    
 
     /*
     // MARK: - Navigation

@@ -145,7 +145,7 @@
                                                 <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="A4u-DE-xVB">
                                                     <rect key="frame" x="4" y="0.0" width="389" height="135"/>
                                                     <subviews>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fNo-jG-xc1">
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fNo-jG-xc1">
                                                             <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" secondItem="fNo-jG-xc1" secondAttribute="height" multiplier="1:1" id="S3A-j3-DSo"/>
@@ -184,7 +184,7 @@
                                             <outlet property="trailDesc" destination="fxg-Zr-OVY" id="xUK-vp-d1p"/>
                                             <outlet property="trailImageView" destination="fNo-jG-xc1" id="Vp3-BG-BwJ"/>
                                             <outlet property="trailName" destination="JAD-69-53v" id="mK1-JG-voe"/>
-                                            <segue destination="MA3-TJ-HWc" kind="show" id="iYi-On-mid"/>
+                                            <segue destination="MA3-TJ-HWc" kind="show" identifier="detailSegue" id="iYi-On-mid"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -199,23 +199,14 @@
                             <constraint firstItem="TQl-PT-Y8E" firstAttribute="top" secondItem="u6i-eX-7f2" secondAttribute="top" id="lD8-5J-PgV"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="IDZ-Ff-APf">
-                        <barButtonItem key="rightBarButtonItem" style="plain" id="HtP-Ab-hhs">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="LiV-Go-jqz">
-                                <rect key="frame" x="259" y="4.6666666666666679" width="118" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" image="plus" catalog="system" title="New Trail"/>
-                            </button>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="IDZ-Ff-APf"/>
                     <connections>
                         <outlet property="tableView" destination="TQl-PT-Y8E" id="Zpd-cm-okV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="T0X-Yk-G47" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1861.8320610687022" y="3.5211267605633805"/>
+            <point key="canvasLocation" x="1862" y="4"/>
         </scene>
         <!--Create Trail View Controller-->
         <scene sceneID="9fO-l3-8J8">
@@ -228,7 +219,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="v92-N6-jbU">
                                 <rect key="frame" x="16" y="103" width="361" height="644.66666666666663"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="AJN-14-P9A">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="AJN-14-P9A">
                                         <rect key="frame" x="0.0" y="0.0" width="361" height="361"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="AJN-14-P9A" secondAttribute="height" multiplier="1:1" id="oGb-3w-5Ol"/>
@@ -422,7 +413,6 @@
     </scenes>
     <resources>
         <image name="checkmark" catalog="system" width="128" height="114"/>
-        <image name="plus" catalog="system" width="128" height="113"/>
         <systemColor name="opaqueSeparatorColor">
             <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

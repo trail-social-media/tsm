@@ -124,7 +124,7 @@ class HomeViewController: UIViewController {
         locationManager.stopUpdatingLocation()
         stopButton.isEnabled = false
         createButton.isEnabled = true
-        let region = MKCoordinateRegion(center: oldLocation.coordinate, span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
+        let region = MKCoordinateRegion(center: oldLocation.coordinate, span: MKCoordinateSpan(latitudeDelta: 0.005, longitudeDelta: 0.005))
         mapView.setRegion(region, animated: true)
     }
     
@@ -229,7 +229,7 @@ extension HomeViewController: CLLocationManagerDelegate {
 extension HomeViewController: MKMapViewDelegate {
     func mapView(_ mapView: MKMapView!, rendererFor overlay: MKOverlay!) -> MKOverlayRenderer! {
         let pr = MKPolylineRenderer(overlay: overlay)
-        pr.strokeColor = UIColor.red
+        pr.strokeColor = UIColor.orange
         pr.lineWidth = 5
         return pr
     }
