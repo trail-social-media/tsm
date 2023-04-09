@@ -6,9 +6,11 @@
 //
 
 import UIKit
+import ParseSwift
 
 class SettingsViewController: UIViewController {
-
+    @IBOutlet weak var usernameLabel: UILabel!
+    
     @IBAction func logoutButtonTapped(_ sender: Any) {
         
         let alertController = UIAlertController(title: "Logout of \(User.current?.username ?? "current account")?", message: nil, preferredStyle: .alert)
@@ -26,6 +28,8 @@ class SettingsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        usernameLabel.text = User.current?.username
 
         // Do any additional setup after loading the view.
     }

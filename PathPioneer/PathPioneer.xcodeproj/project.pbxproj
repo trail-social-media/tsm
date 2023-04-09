@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		2F0DA42729DA1071002DC388 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F0DA42629DA1071002DC388 /* User.swift */; };
-		2F0DA42929DA1082002DC388 /* Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F0DA42829DA1082002DC388 /* Map.swift */; };
 		2F0DA42B29DA120A002DC388 /* CreateTrailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F0DA42A29DA120A002DC388 /* CreateTrailViewController.swift */; };
 		2F0DA42E29DA2875002DC388 /* ViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F0DA42D29DA2875002DC388 /* ViewController+Extensions.swift */; };
 		2F0DA45029DA445C002DC388 /* TrailListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F0DA44F29DA445C002DC388 /* TrailListViewController.swift */; };
@@ -54,7 +53,6 @@
 
 /* Begin PBXFileReference section */
 		2F0DA42629DA1071002DC388 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		2F0DA42829DA1082002DC388 /* Map.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Map.swift; sourceTree = "<group>"; };
 		2F0DA42A29DA120A002DC388 /* CreateTrailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTrailViewController.swift; sourceTree = "<group>"; };
 		2F0DA42D29DA2875002DC388 /* ViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+Extensions.swift"; sourceTree = "<group>"; };
 		2F0DA44F29DA445C002DC388 /* TrailListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrailListViewController.swift; sourceTree = "<group>"; };
@@ -115,7 +113,6 @@
 			children = (
 				2F0DA42629DA1071002DC388 /* User.swift */,
 				2F0DA45629DA55FB002DC388 /* Trail.swift */,
-				2F0DA42829DA1082002DC388 /* Map.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -386,7 +383,6 @@
 				2F0DA42E29DA2875002DC388 /* ViewController+Extensions.swift in Sources */,
 				2F0DA45229DA4480002DC388 /* TrailDetailViewController.swift in Sources */,
 				2FFE240729CFC19000AD9FA2 /* HomeViewController.swift in Sources */,
-				2F0DA42929DA1082002DC388 /* Map.swift in Sources */,
 				2FFE240529CFBF2400AD9FA2 /* SettingsViewController.swift in Sources */,
 				2F6F65FB29E26218008EE8B9 /* TrailAnnotationView.swift in Sources */,
 			);
