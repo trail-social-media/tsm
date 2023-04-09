@@ -21,22 +21,28 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var stopButton: UIButton!
     @IBOutlet weak var restartButton: UIButton!
     @IBOutlet weak var mapView: MKMapView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // Update UI
         stopButton.isEnabled = false
         stopButton.tintColor = UIColor.red
         startButton.tintColor = UIColor.green
         createButton.tintColor = UIColor.orange
         restartButton.isEnabled = false
         createButton.isEnabled = false
+        mapView.showsUserLocation = true
+        mapView.delegate = self
+        mapView.mapType = MKMapType(rawValue: 0)!
         
+        // Set up Location Manager
         locationManager = CLLocationManager()
-        locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.distanceFilter = 3.0
         locationManager.delegate = self;
 
-        // user activated automatic authorization info mode
+        // Check location authorization status
         var status = locationManager.authorizationStatus
         
         switch (status) {
@@ -49,35 +55,28 @@ class HomeViewController: UIViewController {
             presentGoToSettingsAlert()
         }
         
-        status = locationManager.authorizationStatus
-        if ((status == .authorizedAlways) || (status == .authorizedWhenInUse)) {
-            locationManager.startUpdatingLocation()
-            //locationManager.startUpdatingHeading()
-            mapView.showsUserLocation = true
-            //mapview setup to show user location
-            mapView.delegate = self
-            mapView.mapType = MKMapType(rawValue: 0)!
-            //mapView.userTrackingMode = MKUserTrackingMode(rawValue: 2)!
-            mapView.userTrackingMode = .follow
+        if (CLLocationManager.locationServicesEnabled()) {
+            mapView.setUserTrackingMode(.follow, animated: true)
+            trail = Trail()
+            trail.longitudes = [Double]()
+            trail.latitudes = [Double]()
+        } else {
+            startButton.isEnabled = false
         }
-        
-        // Do any additional setup after loading the view.
-        
-        //mapView.delegate = self
-        //mapView.userTrackingMode = .follow
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         
         if (isNewTrail) {
-            
+            restartTrail()
+            isNewTrail = false
         }
     }
     
     @IBAction func startButtonTapped(_ sender: Any) {
-        
-        
+        locationManager.stopUpdatingLocation()
+        locationManager.startUpdatingLocation()
         startButton.isEnabled = false
         restartButton.isEnabled = true
         stopButton.isEnabled = true
@@ -85,34 +84,48 @@ class HomeViewController: UIViewController {
     }
     
     @IBAction func restartButtonTapped(_ sender: Any) {
-        if (trail == nil) {
-            let alertController = UIAlertController(title: "Restart current trail? Unsaved trail data will be removed.", message: nil, preferredStyle: .alert)
-            
-            let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
-            let restartAction = UIAlertAction(title: "Restart", style: .destructive) {_ in
-                self.restartTrail()
-            }
-            
-            alertController.addAction(restartAction)
-            alertController.addAction(cancelAction)
-            
-            present(alertController, animated: true)
+        let alertController = UIAlertController(title: "Restart current trail? Unsaved trail data will be removed.", message: nil, preferredStyle: .alert)
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
+        let restartAction = UIAlertAction(title: "Restart", style: .destructive) {_ in
+            self.restartTrail()
         }
+        
+        alertController.addAction(restartAction)
+        alertController.addAction(cancelAction)
+        
+        present(alertController, animated: true)
+    }
+    
+    func focusMap() {
+        
     }
     
     func restartTrail() {
-        trail = nil
+        trail = Trail()
+        trail.longitudes = [Double]()
+        trail.latitudes = [Double]()
         
         // Reset map here
+        let overlays = mapView.overlays
+        mapView.removeOverlays(overlays)
+        if (CLLocationManager.locationServicesEnabled()) {
+            locationManager.stopUpdatingLocation()
+        }
+        oldLocation = nil
         
         startButton.isEnabled = true
         stopButton.isEnabled = false
-        restartButton.isEnabled = false;
+        restartButton.isEnabled = false
+        createButton.isEnabled = false
     }
     
     @IBAction func stopButtonTapped(_ sender: Any) {
+        locationManager.stopUpdatingLocation()
         stopButton.isEnabled = false
         createButton.isEnabled = true
+        let region = MKCoordinateRegion(center: oldLocation.coordinate, span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
+        mapView.setRegion(region, animated: true)
     }
     
     func presentGoToSettingsAlert() {
@@ -135,22 +148,11 @@ class HomeViewController: UIViewController {
 
         present(alertController, animated: true, completion: nil)
     }
-
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let createTrailViewController = segue.destination as? CreateTrailViewController {
             createTrailViewController.trail = trail
+            createTrailViewController.homeViewController = self
         }
     }
     
@@ -158,26 +160,35 @@ class HomeViewController: UIViewController {
 
 extension HomeViewController: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        /*
-        if let location = locations.first {
-            print("present location : \(location.coordinate.latitude), \(location.coordinate.longitude)")
-        }
-         */
         if oldLocation == nil {
             oldLocation = locations.first as CLLocation?
             return
         }
         
+        // Update Map UI to follow User
+        if (mapView.userTrackingMode == .none) {
+            mapView.setUserTrackingMode(.follow, animated: true)
+            let region = MKCoordinateRegion(center: oldLocation.coordinate, span: MKCoordinateSpan(latitudeDelta: 0.005, longitudeDelta: 0.005))
+            mapView.setRegion(region, animated: true)
+        }
+        
+        // Use new location data
         if let newLocation = locations.first as CLLocation?,
            newLocation.coordinate.latitude != oldLocation.coordinate.latitude,
            newLocation.coordinate.longitude != oldLocation.coordinate.longitude {
             let oldCoordinates = oldLocation.coordinate
             let newCoordinates = newLocation.coordinate
             var area = [oldCoordinates, newCoordinates]
+            
+            // Creates route on map
             var polyline = MKPolyline(coordinates: &area, count: area.count)
             self.mapView.addOverlay(polyline)
             print("Polyline added for old coord: [\(oldLocation.coordinate.latitude),  \(oldLocation.coordinate.longitude)] to new coord: [\(newLocation.coordinate.latitude), \(newLocation.coordinate.longitude)]")
+            
+            // Update location values
             oldLocation = newLocation
+            trail.latitudes?.append(Double(oldLocation.coordinate.latitude))
+            trail.longitudes?.append(Double(oldLocation.coordinate.longitude))
         }
     }
     
@@ -221,6 +232,5 @@ extension HomeViewController: MKMapViewDelegate {
         pr.strokeColor = UIColor.red
         pr.lineWidth = 5
         return pr
-
     }
 }

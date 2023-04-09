@@ -13,6 +13,7 @@ class CreateTrailViewController: UIViewController {
 
     var trail: Trail!
     var pickedImage: UIImage?
+    var homeViewController: HomeViewController!
     
     @IBOutlet weak var trailImageView: UIImageView!
     @IBOutlet weak var trailNameField: UITextField!
@@ -59,7 +60,8 @@ class CreateTrailViewController: UIViewController {
             DispatchQueue.main.async {
                 switch result {
                 case .success(let trail):
-                    print("✅ Post Saved! \(trail)")
+                    print("✅ Trail Saved! \(trail)")
+                    self?.homeViewController.isNewTrail = true
                     
                     DispatchQueue.main.async {
                         // Return to previous view controller
@@ -84,6 +86,7 @@ class CreateTrailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        trailImageView.isHidden = true
         // Do any additional setup after loading the view.
     }
     
@@ -152,6 +155,7 @@ extension CreateTrailViewController: PHPickerViewControllerDelegate {
             } else {
                 DispatchQueue.main.async {
                     self?.trailImageView.image = image
+                    self?.trailImageView.isHidden = false
                     
                     self?.pickedImage = image
                 }
@@ -172,6 +176,7 @@ extension CreateTrailViewController: UIImagePickerControllerDelegate, UINavigati
         }
         
         trailImageView.image = image
+        trailImageView.isHidden = false
         pickedImage = image
     }
 }
