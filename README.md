@@ -1,4 +1,4 @@
-Original App Design Project - README Template
+Original App Design Project - CodePath Final Project
 ===
 
 # PathPioneer
@@ -12,6 +12,9 @@ Original App Design Project - README Template
 ## Overview
 ### Description
 Allows users to map trails they walk on, and refer to previous maps. Also allows users to share maps with other users and view maps submitted to the app by other users. 
+
+### Final Preview
+
 
 ### App Evaluation
 - **Category:** Social Network / Navigation
