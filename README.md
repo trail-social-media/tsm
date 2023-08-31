@@ -14,7 +14,7 @@ Original App Design Project - CodePath Final Project
 Allows users to map trails they walk on, and refer to previous maps. Also allows users to share maps with other users and view maps submitted to the app by other users. 
 
 ### Final Preview
-
+<img src="https://github.com/trail-social-media/tsm/blob/main/FinalPreview.gif">
 
 ### App Evaluation
 - **Category:** Social Network / Navigation
