@@ -28,6 +28,7 @@ class TrailDetailViewController: UIViewController {
         trailDesc.text = trail.trailDesc
         
         trailMap.delegate = self
+        trailMap.showsUserLocation = true
         
         // Create route on map
         for i in 1...(trail.latitudes!.count - 1) {
@@ -41,7 +42,7 @@ class TrailDetailViewController: UIViewController {
         
         // Zoom map in
         let centerCoord = CLLocationCoordinate2D(latitude: trail.latitudes![trail.latitudes!.count / 2], longitude: trail.longitudes![trail.longitudes!.count / 2])
-        let region = MKCoordinateRegion(center: centerCoord, span: MKCoordinateSpan(latitudeDelta: 0.005, longitudeDelta: 0.005))
+        let region = MKCoordinateRegion(center: centerCoord, span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
         trailMap.setRegion(region, animated: true)
         
         // Create start and end annotations
